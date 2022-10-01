@@ -5,13 +5,25 @@ import imagem3 from "./imgs/03-sconces.png";
 import imagem4 from "./imgs/04-floorlamps.png";
 import imagem5 from "./imgs/05-lightdecor.png";
 import imagem6 from "./imgs/06-garlands.png";
-//import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-//const Stack = createNativeStackNavigator();
+import imagemsacola from "./imgs/icone-sacola.png";
 
 const App = () => {
   return (
     <View style={styles.container}>
+
+      <View style={styles.seçãosuperior}>
+        <View style={styles.seçãotitulo}>
+          <Text style={styles.titulo}>Lighteria</Text>
+        </View>
+        <View style={styles.cardicone}>
+          <Image style={styles.icone} source={imagemsacola} resizeMode="contain" />
+        </View>
+      </View>
+
+      <View style={styles.categorias}>
+        <Text>---------------------Categorias---------------------</Text>
+      </View>
+
       <View style={styles.seção}>
         <View style={styles.card}>
           <Image style={styles.imagem} source={imagem1} resizeMode="contain" />
@@ -22,6 +34,7 @@ const App = () => {
           <Text>Lampada de texto</Text>
         </View>
       </View>
+
       <View style={styles.seção}>
         <View style={styles.card}>
           <Image style={styles.imagem} source={imagem3} resizeMode="contain" />
@@ -50,9 +63,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ccc",
+    padding: 10,
+  },
+  titulo: {
+    fontSize: 30,
+    fontWeight: "bold",
   },
   imagem: {
-    height: 200,
+    height: 100,
+    width: 100,
+  },
+  icone: {
+    height: 50,
+    width: 50,
+  },
+  cardicone: {
+    backgroundColor: "#fff",
+    borderRadius: 100,
+    textAlign: "center",
+    margin: 20,
+    padding: 10,
   },
   card: {
     backgroundColor: "#fff",
@@ -63,5 +93,17 @@ const styles = StyleSheet.create({
   },
   seção: {
     flexDirection: "row",
+  },
+  categorias: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  seçãotitulo: {
+    flexDirection:"column",
+    justifyContent: "center",
+  },
+  seçãosuperior: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
